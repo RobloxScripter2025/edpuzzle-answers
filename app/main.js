@@ -165,7 +165,7 @@ async function get_assignment() {
     throw new Error("Could not infer the assignment ID. Are you on the correct URL?");
   }
 
-  let assignment_url = `https://edpuzzle.com/api/v3/assignments/${assignment_id}`;
+  let assignment_url = `https://edpuzzle.com/api/v3/learning/assignments/${assignment_id}/users/${user_id}`;
   let response = await fetch(assignment_url, {headers: await construct_headers()});
   if (response.ok) {
     assignment_mode = "legacy";
